@@ -1,0 +1,149 @@
+
+<!Doctype html>
+<html>
+    <link href="shoe.css" rel="stylesheet" type="text/css">
+    <script src="handlebars-v4.0.5.js"></script>
+    <title>shoe-catalogue</title>
+    <head>
+        <header>
+            <h1>SHOE CATALOGUE</h1>
+        </header>
+        
+    </head>
+    
+    <body>
+        <div class="myImages">
+        <img class="myImage" src="Suede.jpg" width="500">
+        </div>
+        
+        <div id="myStock" align="center">
+            
+              <label><b>Size:</b></label> 
+            <select id="searchSize">
+                <option value = "" disabled selected>Choose size here</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "6">6</option>
+                <option value = "7">7</option>
+                <option value = "8">8</option>
+                <option value = "9">9</option>
+                <option value = "10">10</option>
+
+            </select>
+            
+            
+            <label><b>Brand:</b></label>           
+            <select id="searchBrand">
+                <option value = "" disabled selected>Choose Brand here</option>
+                <option value ="Adidas">Adidas</option>
+                <option value ="Nike">Nike</option>
+                <option value ="Puma">Puma</option>
+            </select>
+
+          
+            <label><b>Color:</b></label>          
+            <select id="searchColor">
+                <option value = "" disabled selected>Choose color here</option>
+                <option value = "Blue">Blue</option>
+                <option value = "black">Black</option>
+                <option value = "Red">Red</option>
+                <option value = "White">White</option>
+            </select>
+            <br/><br>
+            
+            
+            <div id="search" align="center">
+           <button id="searchBtn" onclick="myFunction()">Search</button>
+                
+            <br/>
+            <br/>
+                <p id="displayInfo">
+                <script id="template" type="text/x-handlebars">
+        <h3>
+            <table border="20" align="center">
+                <th>BRAND</th>
+                <th>COLOR</th>
+                <th>SIZE</th>
+                <th>STOCK</th>
+                <th>PRICE</th>
+                
+                {{#each stock}}
+                <tr>
+                    <td>{{brand}}</td>
+                    <td>{{color}}</td>
+                    <td>{{size}}</td>
+                    <td>{{in_stock}}</td>
+                    <td> R {{price}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </h3>
+    </script>
+                </p>
+            </div>
+            
+        </div>
+        <br><br><br>
+        
+        <div id="addStock" align="center">
+        
+           <div id="showing" align="center">
+           <button id="showBtn" onclick="showStock()">Show Stock</button>
+                
+            </div>
+        <br>  
+            
+              <label><b>addSize:</b></label>
+            <input list="addingSize" name="Size" placeholder="Choose size">
+            <datalist id="addingSize">
+                
+                <option id="addingSizeList" name = "US/2">US/2</option>
+                <option id="addingSizeList" name = "US/3">US/3</option>
+                <option id="addingSizeList" name = "US/4">US/4</option>
+                <option id="addingSizeList" name = "US/5">US/5</option>
+                <option id="addingSizeList" name = "US/6">US/6</option>
+                
+            </datalist>
+            
+            
+            <label><b>addBrand:</b></label>
+            <input list="addingBrand" name="Brand" placeholder="Choose your brand">
+            
+            <datalist id="addingBrand">
+
+                <option id="addingBrandList" name ="Adidas">Adidas</option>
+                <option id="addingBrandList" name ="Nike">Nike</option>
+                <option id="addingBrandList" name ="Puma">Puma</option>
+                
+             </datalist>
+
+          
+            <label><b>AddColor:</b></label>
+            <input list="addingColor" name="Color" placeholder="Choose color">
+            <datalist id="addingColor">
+                
+                <option id="addingColorList" name = "Blue">Blue</option>
+                <option id="addingColorList" name = "Black">Black</option>
+                <option id="addingColorList" name = "Red">Red</option>
+                <option id="addingColorList" name = "White">White</option>
+                
+            </datalist>
+            <br/><br>
+            
+             <div id="buttons" align="center">
+           <button id="addBtn" onclick="myAdd()">Add Stock</button> 
+           <button id="hideBtn" onclick="hideStock()">Hide Stock</button> 
+            
+        </div>
+               <p id="showInfo"></p>
+
+        
+    </body>
+    
+    
+    <script src="shoe.js" charset="utf-8"></script>
+    
+</html>
