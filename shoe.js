@@ -1,6 +1,6 @@
-    var ShoeColor = document.getElementById('c');
-     var mySize = document.getElementById('s');
-     var myBrand = document.getElementById('b');
+    var ShoeColor = document.getElementById('colory');
+     var mySize = document.getElementById('sizey');
+     var myBrand = document.getElementById('brandy');
      var userDisplay = document.getElementById('displayInfo');
 console.log(mySize.value);
      console.log(myBrand.value);
