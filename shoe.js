@@ -1,6 +1,6 @@
-    var ShoeColor = document.querySelector('#searchColor');
-     var mySize = document.querySelector('#searchSize');
-     var myBrand = document.querySelector('#searchBrand');
+    var ShoeColor = document.getElementById('c');
+     var mySize = document.getElementById('s');
+     var myBrand = document.getElementById('b');
      var userDisplay = document.getElementById('displayInfo');
 console.log(mySize.value);
      console.log(myBrand.value);
@@ -40,25 +40,59 @@ console.log(mySize.value);
         {brand: 'Nike', color : 'peach', price : 2100, in_stock : 22, size: 9},
         {brand: 'Nike', color : 'green', price : 2100, in_stock : 22, size: 3}];
 
-    var stock = [];
-    var theTemplateScript = document.getElementById("template").innerHTML;
-    var theTemplate = Handlebars.compile(theTemplateScript);
-      
-
-//var filtered = filter(myFunction);
+    
 
  function myFunction() {
-    "use strict";    
+    "use strict";
    
-    for (var i = 0; i < shoeList.length; i++){
-
-        if(shoeList[i].brand === myBrand.value && shoeList[i].color === ShoeColor.value && shoeList[i].size === Number(mySize.value)){
-            stock.push(shoeList[i]);
+     function theBrand(input) {
+         return myBrand.value == input.brand;
+     }
+     
+       function theColor(input) {
+         return ShoeColor.value == input.color;
+     }
+     
+       function theSize(input) {
+         return mySize.value == input.size;
+     }
+     
+     
+     if(myBrand.value !==""){
+      var list = shoeList.filter(theBrand);
+       }
+     
+         if(ShoeColor.value !== ""){
+            if(myBrand.value !== "") {
+            var list = list.filter(theColor);
+            } else {
+            var list = shoeList.filter(theColor);
+            }
         }
-    }
-     console.log(stock)
-     var showMyStock = theTemplate({
-            stock
+     
+      if(mySize.value !== ""){
+        if(myBrand.value !== "" || ShoeColor.value !== ""){
+         var list = list.filter(theSize);
+     }else{
+        var list = shoeList.filter(theSize); 
+     }
+     }
+     
+     
+     var theTemplateScript = document.getElementById("template").innerHTML;
+    var theTemplate = Handlebars.compile(theTemplateScript);
+         var showMyStock = theTemplate({
+           list
                 });
      userDisplay.innerHTML = showMyStock;
-}; 
+     mySize.value = "";
+     myBrand.value = "";
+     ShoeColor.value = "";
+
+   
+
+
+}
+
+
+

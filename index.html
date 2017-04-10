@@ -18,8 +18,30 @@
         
         <div id="myStock" align="center">
             
+            
+            <label><b>Brand:</b></label>
+            <input list="searchBrand" placeholder="Choose brand here" id="b">
+            <datalist id="searchBrand">
+                <option value ="Adidas">Adidas</option>
+                <option value ="Nike">Nike</option>
+                <option value ="Puma">Puma</option>
+            </datalist>
+            
+            
+             <label><b>Color:</b></label> 
+            <input list="searchColor" placeholder="Choose color here" id="c">
+            <datalist id="searchColor">
+                <option value = "peach">peach</option>
+                <option value = "black">black</option>
+                <option value = "red">red</option>
+                <option value = "white">white</option>
+                <option value = "green">green</option>
+
+            </datalist>
+            
               <label><b>Size:</b></label> 
-            <select id="searchSize">
+            <input list="searchSize" placeholder="Choose size here" id="s">
+            <datalist id="searchSize">
                 <option value = "" disabled selected>Choose size here</option>
                 <option value = "1">1</option>
                 <option value = "2">2</option>
@@ -32,38 +54,19 @@
                 <option value = "9">9</option>
                 <option value = "10">10</option>
 
-            </select>
-            
-            
-            <label><b>Brand:</b></label>           
-            <select id="searchBrand">
-                <option value = "" disabled selected>Choose Brand here</option>
-                <option value ="Adidas">Adidas</option>
-                <option value ="Nike">Nike</option>
-                <option value ="Puma">Puma</option>
-            </select>
-
-          
-            <label><b>Color:</b></label>          
-            <select id="searchColor">
-                <option value = "" disabled selected>Choose color here</option>
-                <option value = "peach">peach</option>
-                <option value = "black">black</option>
-                <option value = "red">red</option>
-                <option value = "white">white</option>
-                <option value = "green">green</option>
-
-            </select>
+            </datalist>      
+           
             <br/><br>
             
             
             <div id="search" align="center">
-           <button id="searchBtn" onclick="myFunction()">Search</button>
+           <button id="searchBtn" onclick="myFunction();">Search</button>
                 
             <br/>
             <br/>
                 <p id="displayInfo">
-                <script id="template" type="text/x-handlebars">
+                </p>
+                <script id="template" type="text/x-handlebars-template">
         <h3>
             <table border="20" align="center">
                 <th>BRAND</th>
@@ -72,7 +75,7 @@
                 <th>STOCK</th>
                 <th>PRICE</th>
                 
-                {{#each stock}}
+                {{#each list}}
                 <tr>
                     <td>{{brand}}</td>
                     <td>{{color}}</td>
@@ -84,7 +87,6 @@
             </table>
         </h3>
     </script>
-                </p>
             </div>
             
         </div>
