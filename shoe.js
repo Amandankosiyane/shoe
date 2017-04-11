@@ -89,10 +89,37 @@ console.log(mySize.value);
      myBrand.value = "";
      ShoeColor.value = "";
 
-   
-
-
 }
 
-
-
+//function myAdd(){
+//    var addBrand = document.getElementById("addingBrand");
+//    var addColor = document.getElementById("addingColor");
+//    var addSize = document.getElementById("addingSize");
+//    var addStock = document.getElementById("addingStock");
+//    var addPrice = document.getElementById("addingPrice");
+//    var addDisplay = document.getElementById("showInfo");
+//    var stock = [];
+//
+//    document.getElementById("addBtn").addEventListener("onclick",myAdd()
+//
+//
+//
+//      if(addBrand.value !=="" && addColor.value !=="" && addSize.value !=="" && addStock.value !==""){
+//          {brand: addBrand.value, color: addColor.value, size: addSize.value, in_stock: addStock.value}
+//          shoeList.push(stock);
+//      } else{
+//          alert("Enter a valid stock items");
+//      }
+//
+//        var showTemplate = document.getElementById("mytemplate").innerHTML;
+//        var templateScript = Handlebars.compile(showTemplate);
+//    //    var showStock = templateScript({
+//    //        
+//    //    })
+//
+//        addDisplay.innerHTML = showStock;
+//        if(addDisplay.style.display === "inline-block"){
+//            addDisplay.style.display = "none";
+//        }
+//
+//    }

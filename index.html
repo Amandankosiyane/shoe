@@ -60,12 +60,73 @@
             
             
             <div id="search" align="center">
-           <button id="searchBtn" onclick="myFunction();">Search</button>
+           <button id="searchBtn" onclick="myFunction();">Search stock</button>
                 
             <br/>
             <br/>
                 <p id="displayInfo">
                 </p>
+                
+                
+          
+                 
+        <div id="addStock" align="center">
+        
+            <h2><b>Adding Stock</b></h2>
+         
+            
+            <label><b>Add Brand:</b></label>
+            <input type="text" name="Brand" placeholder="Add your brand" id="addingBrand">
+            
+            <label><b>Add Color:</b></label>
+            <input type="text" name="Color" placeholder="Add your color" id="addingColor">
+            
+              <label><b>Add Size:</b></label>
+            <input type="text" name="Size" placeholder="add your size" id="addingSize">
+            
+            <label><b>Add stock:</b></label>
+            <input type="text" name="in_stock" placeholder="add your stock" id="addingStock">
+            
+            <label><b>Add price:</b></label>
+            <input type="text" name="Price" placeholder="Add your price" id="addingPrice">
+          
+           
+            <br/><br>
+            
+               
+                     <div id="buttons" align="center">
+           <button id="addBtn" onclick="myAdd()">Add Stock</button> 
+                         <br><br>
+            
+        </div>
+          
+               <p id="showInfo"></p>
+        </div>
+                
+                
+     <script id="myTemplate" type="text/x-handlebars-template">
+        <h3>
+            <table border="20" align="center">
+                <th>BRAND</th>
+                <th>COLOR</th>
+                <th>SIZE</th>
+                <th>STOCK</th>
+                <th>PRICE</th>
+                
+                {{#each}}
+                <tr>
+                    <td>{{brand}}</td>
+                    <td>{{color}}</td>
+                    <td>{{size}}</td>
+                    <td>{{in_stock}}</td>
+                    <td> R {{price}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </h3>
+    </script>
+                
+                
                 <script id="template" type="text/x-handlebars-template">
         <h3>
             <table border="20" align="center">
@@ -91,59 +152,7 @@
             
         </div>
         <br><br><br>
-        
-        <div id="addStock" align="center">
-        
-           <div id="showing" align="center">
-           <button id="showBtn" onclick="showStock()">Show Stock</button>
-                
-            </div>
-        <br>  
-            
-              <label><b>addSize:</b></label>
-            <input list="addingSize" name="Size" placeholder="Choose size">
-            <datalist id="addingSize">
-                
-                <option id="addingSizeList" name = "US/2">US/2</option>
-                <option id="addingSizeList" name = "US/3">US/3</option>
-                <option id="addingSizeList" name = "US/4">US/4</option>
-                <option id="addingSizeList" name = "US/5">US/5</option>
-                <option id="addingSizeList" name = "US/6">US/6</option>
-                
-            </datalist>
-            
-            
-            <label><b>addBrand:</b></label>
-            <input list="addingBrand" name="Brand" placeholder="Choose your brand">
-            
-            <datalist id="addingBrand">
-
-                <option id="addingBrandList" name ="Adidas">Adidas</option>
-                <option id="addingBrandList" name ="Nike">Nike</option>
-                <option id="addingBrandList" name ="Puma">Puma</option>
-                
-             </datalist>
-
-          
-            <label><b>AddColor:</b></label>
-            <input list="addingColor" name="Color" placeholder="Choose color">
-            <datalist id="addingColor">
-                
-                <option id="addingColorList" name = "Blue">Blue</option>
-                <option id="addingColorList" name = "Black">Black</option>
-                <option id="addingColorList" name = "Red">Red</option>
-                <option id="addingColorList" name = "White">White</option>
-                
-            </datalist>
-            <br/><br>
-            
-             <div id="buttons" align="center">
-           <button id="addBtn" onclick="myAdd()">Add Stock</button> 
-           <button id="hideBtn" onclick="hideStock()">Hide Stock</button> 
-            
-        </div>
-               <p id="showInfo"></p>
-
+       
         
     </body>
     
