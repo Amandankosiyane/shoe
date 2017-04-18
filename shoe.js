@@ -135,7 +135,7 @@ function myFunction() {
      
      
      var theTemplateScript = document.getElementById("template").innerHTML;
-    console.log(stock);
+    //console.log(stock);
     var theTemplate = Handlebars.compile(theTemplateScript);
          var showMyStock = theTemplate({
            stock: stock
@@ -192,5 +192,5 @@ var moreColor = document.createElement("option");
     addColor.value = "";
     addSize.value = "";
     addStock.value = "";
-    addprice.value = "";
+    addPrice.value = "";
 }
