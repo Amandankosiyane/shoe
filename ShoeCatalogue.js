@@ -194,3 +194,7 @@ var moreColor = document.createElement("option");
     addStock.value = "";
     addprice.value = "";
 }
+
+    
+
+
