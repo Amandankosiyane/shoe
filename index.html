@@ -20,7 +20,6 @@
 
 <select>
         <option value="" disabled selected>Please select option</option>
-
          {{#each brand}}
     <option>{{this}}</option>
     {{/each}}
@@ -41,10 +40,16 @@
             </script>
             
             
-            <div class="searlist">
+             <div class="searlist">
+            <label for="searchBrand">Brand:</label>
             <select class="searchBrand"></select>
+                
+            <label for="searcholor">Color:</label>
             <select class="searchColor"></select>
+                
+            <label for="searchSize">Size:</label>
             <select class="searchSize"></select>
+                
             <button onclick="myFunction();" id="searchStock">Search</button>
             </div>
             

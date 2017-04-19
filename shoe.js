@@ -165,8 +165,8 @@ function myAddStock(){
     var addDisplay = document.getElementById("showInfo");
 
 var  stockAdding = {};
-    createProperty('brand', addBrand.value);
-    createProperty('color', addColor.value);
+    createProperty('brand', addBrand.value.toLowerCase());
+    createProperty('color', addColor.value.toLowerCase());
     createProperty('size', addSize.value);
     createProperty('in_stock', addStock.value);
     createProperty('price', addPrice.value);
@@ -179,13 +179,13 @@ function createProperty(propertyName,propertyValue){
 
 var addMoreBrands = document.querySelector(".searchBrand");
     var moreBrand = document.createElement("option");
-    moreBrand.text = addBrand.value;
+    moreBrand.text = addBrand.value.toLowerCase();
     addMoreBrands.add(moreBrand);
     uniqueBrand();
     
  var addMoreColors = document.querySelector(".searchColor");
  var moreColor = document.createElement("option");
-    moreColor.text = addColor.value;
+    moreColor.text = addColor.value.toLowerCase();
     addMoreColors.add(moreColor);
         uniqueColor();
 

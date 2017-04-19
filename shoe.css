@@ -43,6 +43,9 @@ table{
 
 }
 
+select{
+    text-transform: capitalize;
+}
 
 td{
     font-weight: 100;
