@@ -133,6 +133,7 @@ function myFunction() {
      }
      }
      
+   
      
      var theTemplateScript = document.getElementById("template").innerHTML;
     //console.log(stock);
@@ -142,6 +143,9 @@ function myFunction() {
                 });
      display.innerHTML = showMyStock;
     // after pressing the search button the dropdown must be cleared
+     if(stock === undefined){
+        document.getElementById("userDisplay").innerHTML =  ("PLEASE SELECT ATLEAST ONE OPTION FIRST!!!!");
+    }
      mySize.value = "";
      myBrand.value = "";
      ShoeColor.value = "";
@@ -177,17 +181,22 @@ var addMoreBrands = document.querySelector(".searchBrand");
     var moreBrand = document.createElement("option");
     moreBrand.text = addBrand.value;
     addMoreBrands.add(moreBrand);
+    uniqueBrand();
     
  var addMoreColors = document.querySelector(".searchColor");
-var moreColor = document.createElement("option");
+ var moreColor = document.createElement("option");
     moreColor.text = addColor.value;
     addMoreColors.add(moreColor);
+        uniqueColor();
+
     
     var addMoreSizes = document.querySelector(".searchSize");
     var moreSize = document.createElement("option");
     moreSize.text = addSize.value;
     addMoreSizes.add(moreSize);
+    uniqueSize();
 
+    
     addBrand.value = "";
     addColor.value = "";
     addSize.value = "";
