@@ -48,7 +48,7 @@ var theTemplate = Handlebars.compile(dropdown);
             brands.push(newBrand.brand); // then push the new brand values to the new object list.
         }
     }
-    document.querySelector(".searchBrand").innerHTML = theTemplate({brand: brands});
+    document.querySelector("#searchBrand").innerHTML = theTemplate({brand: brands});
 
 }
 
@@ -68,7 +68,7 @@ function uniqueColor(){
             colors.push(newColor.color);
         }
     }
-    document.querySelector(".searchColor").innerHTML = theTemplate({color: colors});
+    document.querySelector("#searchColor").innerHTML = theTemplate({color: colors});
 }
     uniqueColor();
 
@@ -85,7 +85,7 @@ function uniqueSize(){
             sizes.push(newSize.size);
         }
     }
-    document.querySelector(".searchSize").innerHTML = theTemplate({size: sizes});
+    document.querySelector("#searchSize").innerHTML = theTemplate({size: sizes});
 }
     uniqueSize();
 
@@ -94,9 +94,9 @@ function uniqueSize(){
 function myFunction() {
     "use strict";
     // get the document from html in order to link them to Javascript
-    var myBrand = document.querySelector(".searchBrand");
-    var ShoeColor = document.querySelector(".searchColor");
-    var mySize = document.querySelector(".searchSize");
+    var myBrand = document.querySelector("#searchBrand");
+    var ShoeColor = document.querySelector("#searchColor");
+    var mySize = document.querySelector("#searchSize");
    var display = document.getElementById("userDisplay");
 
 
@@ -177,20 +177,20 @@ function createProperty(propertyName,propertyValue){
     shoeList.push(stockAdding);
 
 
-var addMoreBrands = document.querySelector(".searchBrand");
+var addMoreBrands = document.querySelector("#searchBrand");
     var moreBrand = document.createElement("option");
     moreBrand.text = addBrand.value.toLowerCase();
     addMoreBrands.add(moreBrand);
     uniqueBrand();
 
- var addMoreColors = document.querySelector(".searchColor");
+ var addMoreColors = document.querySelector("#searchColor");
  var moreColor = document.createElement("option");
     moreColor.text = addColor.value.toLowerCase();
     addMoreColors.add(moreColor);
         uniqueColor();
 
 
-    var addMoreSizes = document.querySelector(".searchSize");
+    var addMoreSizes = document.querySelector("#searchSize");
     var moreSize = document.createElement("option");
     moreSize.text = addSize.value;
     addMoreSizes.add(moreSize);
